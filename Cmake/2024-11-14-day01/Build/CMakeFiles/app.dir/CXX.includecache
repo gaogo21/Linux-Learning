@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/add.cpp
+head.h
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/head.h
+
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/div.cpp
+head.h
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/head.h
+
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/head.h
+iostream
+-
+
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/main.cpp
+head.h
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/head.h
+
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/mult.cpp
+head.h
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/head.h
+
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/sub.cpp
+head.h
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/head.h
+

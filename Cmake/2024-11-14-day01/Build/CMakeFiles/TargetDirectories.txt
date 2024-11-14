@@ -1,0 +1,3 @@
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/Build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/Build/CMakeFiles/edit_cache.dir
+/home/ubuntu/project/Linux-Learning/Cmake/2024-11-14-day01/Build/CMakeFiles/app.dir
