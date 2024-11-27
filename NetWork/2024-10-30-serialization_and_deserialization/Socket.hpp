@@ -84,7 +84,7 @@ public:
         return newfd;
     }
 
-    bool Connnet(const string &ip, const uint16_t &port)
+    bool Connect(const string &ip, const uint16_t &port)
     {
         struct sockaddr_in peer;
         memset(&peer, 0, sizeof(peer));
