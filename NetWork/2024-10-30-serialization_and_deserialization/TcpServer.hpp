@@ -7,7 +7,7 @@
 
 using namespace std;
 
-using func_t = function<string(string &package);
+using func_t = function<string(string &package)>;
 
 class TcpServer
 {
@@ -65,8 +65,10 @@ void Start()
                         string info = _callback(inbuffer_stream);
                         if (info.empty())
                             break;
-                        
-                        cout << "debug, response : " << inbuffer_stream.c_str() << endl;
+
+                        cout << "debug, response : " << info.c_str() << endl;
+                        cout << "debug: " << inbuffer_stream.c_str() << endl;
+                        write(sockfd, info.c_str(), info.size());
                     }
                 }
                 else if (n == 0)

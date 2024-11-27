@@ -1,13 +1,12 @@
 .PHONY:all
 all:servercal clientcal
 
-Flag=#-DMySelf=1
-Lib=-ljsoncpp
+
 
 servercal:ServerCal.cc
-	g++ -o $@ $^ -std=c++11 $(Lib) $(Flag)
+	g++ -o $@ $^ -std=c++11 
 clientcal:ClientCal.cc
-	g++ -o $@ $^ -std=c++11 -g $(Lib) $(Flag)
+	g++ -o $@ $^ -std=c++11  
 
 
 .PHONY:clean

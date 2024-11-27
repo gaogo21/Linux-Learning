@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     TcpServer *tsvp = new TcpServer(port, std::bind(&ServerCal::Calculator, &cal, std::placeholders::_1));
     tsvp->InitServer();
     // Daemon();
-    daemon(0, 0);
+    //daemon(0, 0);
     tsvp->Start();
 
     

@@ -27,14 +27,20 @@ bool Decode(string &package, string *content)
 {
     size_t pos = package.find(protocol_sep);
     if (pos == string::npos)
+    {
+        cout << "pos == string::npos" << endl;
         return false;
-    
+    }
+        
     string len_str = package.substr(0, pos);
     size_t len = stoi(len_str);
 
     size_t total_len = len_str.size() + len + 2;
     if (package.size() < total_len)
+    {
+        cout << "package.size() < total_len" << endl;
         return false;
+    }
     
     *content = package.substr(pos + 1, len);
     package.erase(0, total_len);
@@ -74,18 +80,29 @@ public:
     bool Deserialize(const string &in)
     {
         size_t left = in.find(blank_space_sep);
-        if (left == string::npos) 
+        if (left == string::npos)
+        {
+            cout << "left == string::npos" << endl;
             return false;
+        }
+            
         string part_x = in.substr(0, left);
 
         size_t right = in.rfind(blank_space_sep);
         if (right == string::npos)
+        {
+            cout << "right == string::npos" << endl;
             return false;
+        }
         
         string part_y = in.substr(right + 1);
 
         if (left + 2 != right)
+        {
+            cout << "left + 2 != right" << endl;
             return false;
+        }
+
         op = in[left + 1];
         x = stoi(part_x);
         y = stoi(part_y);
@@ -132,8 +149,11 @@ public:
     {
         size_t pos = in.find(blank_space_sep);
         if (pos == string::npos)
+        {
+            cout << "pos == string::npos" << endl;
             return false;
-        
+        }
+            
         string part_left = in.substr(0, pos);   //result
         string part_right = in.substr(pos + 1);  //code
 

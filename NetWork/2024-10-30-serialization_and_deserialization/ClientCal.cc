@@ -30,12 +30,12 @@ int main(int argc, char *argv[])
 
     srand(time(nullptr) ^ getpid());
     int cnt = 1;
-    const std::string opers = "+-*/%=-=&^";
+    const std::string opers = "+-*/%";
 
     std::string inbuffer_stream;
     while(cnt <= 10)
     {
-        std::cout << "===============第" << cnt << "次测试....., " << "===============" << std::endl;
+        std::cout << "===============第" << cnt << "次测试....." << "===============" << std::endl;
         int x = rand() % 100 + 1;
         usleep(1234);
         int y = rand() % 100;
@@ -46,10 +46,13 @@ int main(int argc, char *argv[])
 
         std::string package;
         req.Serialize(&package);
+        //std::cout << "Serialize()" << std::endl;
 
         package = Encode(package);
+        //std::cout << "Encode()" << std::endl;
 
         write(sockfd.Fd(), package.c_str(), package.size());
+        //std::cout << "wirte()" << std::endl;
         // std::cout << "这是最新的发出去的请求: " << n << "\n" << package;
         // n = write(sockfd.Fd(), package.c_str(), package.size());
         // std::cout << "这是最新的发出去的请求: \n" << n << "\n" << package;
@@ -61,11 +64,14 @@ int main(int argc, char *argv[])
 
         char buffer[128];
         ssize_t n = read(sockfd.Fd(), buffer, sizeof(buffer)); // 我们也无法保证我们能读到一个完整的报文
+        //std::cout << "read()" << std::endl;
+        std::cout << "buffer: " << buffer << std::endl;
         if(n > 0)
         {
+            //std::cout << "if()" << std::endl;
             buffer[n] = 0;
             inbuffer_stream += buffer; // "len"\n"result code"\n
-            std::cout << inbuffer_stream << std::endl;
+            std::cout << "inbuffer_stream : " << inbuffer_stream << std::endl;
             std::string content;
             bool r = Decode(inbuffer_stream, &content); // "result code"
             assert(r);

@@ -62,15 +62,23 @@ public:
         string content;
         bool r = Decode(package, &content);  //"len"\n"10 + 20"\n
         if (!r)
+        {
+            //cout << "Decode Error!" << endl;
             return "";
-        
+        }
+            
         Request req;
         r = req.Deserialize(content);  //"10 + 20" --> x = 10, op = +, y = 20
         if (!r)
+        {
+            //cout << "Deserialize Error!" << endl;
             return "";
+        }
+            
         
         content = "";
         Response resp = CalculatorHelper(req);  //result = 30, code = 0
+        resp.Serialize(&content);  // "30 0"
         content = Encode(content);  //"len"\n"30 0"
 
         return content;
